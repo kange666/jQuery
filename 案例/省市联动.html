@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #proCity>select{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="proCity">
+
+   省份： <select id="provence">
+    <option value="0" name="provence">河南省</option>
+    <option value="1" name="provence">安徽省</option>
+    <option value="2" name="provence">江苏省</option>
+    <option value="3" name="provence">河北省</option>
+    </select>
+   城市： <select id="city">
+        <option value="0" name="city">请选择</option>
+    </select>
+</div>
+<script src="../jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var $city = $("#city");
+        var cities = [
+            ["商丘市","鹿邑县","许昌市","开封市","郑州市"],
+            ["合肥市","淮南市","马鞍山市","六安市","亳州市"],
+            ["南京市","苏州市","扬州市"],
+            ["沧州市","泊头市","天津市"]
+        ];
+        $("#provence").change(function () {
+            $city.empty();
+            var val = this.value;
+//            alert(val);
+            $.each(cities,function(i,n){
+//                alert(i+":"+n);
+                if(val==i){
+                    $.each(cities[i], function(j,m) {
+//                        alert(m);
+                        var textNode = document.createTextNode(m);
+
+                        var opEle = document.createElement('option');
+                        $(opEle).append($(textNode));
+                        $('#city').append($(opEle));
+                    })
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>

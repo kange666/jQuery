@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="mobiscroll.custom-2.5.2.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<input id="demo" placeholder="Please Select..." />
+
+<button id="clear">Clear</button>
+<button id="show">Show</button>
+
+<script src="../../jquery-1.12.4.js"></script>
+<script src="mobiscroll.custom-2.5.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        $('#demo').mobiscroll().date({
+            theme: 'mobiscroll',
+            display: 'bottom'
+        });
+
+        $('#show').click(function () {
+            $('#demo').mobiscroll('show');
+            return false;
+        });
+
+        $('#clear').click(function () {
+            $('#demo').mobiscroll('clear');
+            return false;
+        });
+    });
+
+</script>
+</body>
+</html>

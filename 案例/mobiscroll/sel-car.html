@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="mobiscroll-2.13.2.full.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<ul id="car_select" data-type="treeList" style="display: none;">
+    <li>
+        <span>宝马X7</span>
+        <ul>
+            <li>浙A 484816</li>
+            <li>浙A 178123</li>
+            <li>浙A 789654</li>
+        </ul>
+    </li>
+    <li>
+        <span>奥迪A8</span>
+        <ul>
+            <li>浙B 999888</li>
+            <li>浙B 528963</li>
+            <li>浙B 784511</li>
+        </ul>
+    </li>
+    <li>
+        <span>奔驰S600</span>
+        <ul>
+            <li>浙C 456925</li>
+            <li>浙C 555555</li>
+            <li>浙C 578411</li>
+        </ul>
+    </li>
+</ul>
+
+<script src="../../jquery-1.12.4.js"></script>
+<script src="mobiscroll-2.13.2.full.min.js"></script>
+<script type="text/javascript">
+    $('#car_select').mobiscroll().treelist({
+        theme: 'android-ics light',
+        mode: 'scroller',
+        display: 'bottom',
+        lang: 'zh',
+        labels: ['车辆'],
+        cancelText: null,
+        headerText: '选择车辆',
+        formatResult: function (array) {
+            //返回自定义格式结果
+        }
+    });
+
+</script>
+</body>
+</html>

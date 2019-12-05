@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="mobiscroll-2.13.2.full.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<input id="demo" placeholder= "Please Select..." />
+
+
+<script src="../../jquery-1.12.4.js"></script>
+<script src="mobiscroll-2.13.2.full.min.js"></script>
+<script type="text/javascript">
+    var opt={};
+    opt.datetime = {};
+    opt.default = {
+        theme: 'ios7',
+        display: display,
+        mode: 'scroller',
+        dateFormat: 'yy-mm-dd',
+        dateOrder: 'yymmdd',
+        dayText: '日', monthText: '月', yearText: '年',hourText: '时',minuteText: '分',
+        lang: 'zh',
+        stepMinute: 10,
+        showNow: true,
+        nowText: "当前",
+        startYear: currYear,
+        endYear: currYear+1,
+        onSelect: function (value) {
+            //点击确定触发的事件
+        }
+    };
+
+    var optDateTime = $.extend(opt['datetime'], opt['default']);
+    $("#demo").mobiscroll(optDateTime).datetime(optDateTime);
+
+    this.mscroller = jq;
+
+</script>
+</body>
+</html>
